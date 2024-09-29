@@ -1,0 +1,38 @@
+<ion-header [translucent]="true" class="custom-header">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Crear materia</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true" class="custom-content">
+  <form (ngSubmit)="crearMateria()">
+    <div class="gradient-separator"></div>
+    <ion-list>
+      <!-- Información de la materia -->
+      <ion-item>
+        <ion-label position="floating">Nombre</ion-label>
+        <ion-input [(ngModel)]="materia.nombre" name="nombre" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Semestre</ion-label>
+        <ion-input type="number" [(ngModel)]="materia.semestre" name="semestre" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Código</ion-label>
+        <ion-input [(ngModel)]="materia.codigo" name="codigo" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Horario</ion-label>
+        <ion-input [(ngModel)]="materia.horario" name="horario" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Observaciones</ion-label>
+        <ion-input [(ngModel)]="materia.observaciones" name="observaciones"></ion-input>
+      </ion-item>
+
+      <ion-button expand="block" type="submit" #submitBtn>Guardar Materia</ion-button>
+    </ion-list>
+  </form>
+</ion-content>

@@ -1,0 +1,26 @@
+<ion-app>
+  <ion-menu content-id="main-content">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Menú</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content>
+      <ion-list>
+        <ion-item button routerLink="/lista-materias">
+          <ion-label>Lista de Materias</ion-label>
+        </ion-item>
+        <ion-item button routerLink="/crear-materia">
+          <ion-label>Crear Materia</ion-label>
+        </ion-item>
+        <ion-item button routerLink="/detalle-materia">
+          <ion-label>Detalle</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+
+  <!-- Este es el contenido principal de la aplicación -->
+  <ion-router-outlet id="main-content"></ion-router-outlet>
+</ion-app>

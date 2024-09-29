@@ -1,0 +1,49 @@
+/* agregar-nota-modal.component.scss */
+
+/* Estilos para el modal de agregar nota */
+
+ion-header {
+    background-color: #3880ff;
+    color: white;
+  }
+  
+  ion-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  ion-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  ion-content {
+    --padding-start: 16px;
+    --padding-end: 16px;
+    --padding-top: 16px;
+    --padding-bottom: 16px;
+    background-color: #f4f5f8;
+  }
+  
+  ion-item {
+    margin-bottom: 12px;
+  }
+  
+  ion-label {
+    font-size: 1.1rem;
+  }
+  
+  ion-input,
+  ion-select {
+    --padding-start: 8px;
+    --padding-end: 8px;
+    font-size: 1rem;
+  }
+  
+  ion-button {
+    margin-top: 20px;
+    --background: #3880ff;
+    --color: white;
+  }
+  

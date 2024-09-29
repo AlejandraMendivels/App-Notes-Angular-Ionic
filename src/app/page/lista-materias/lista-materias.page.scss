@@ -1,0 +1,41 @@
+ion-item {
+  margin-bottom: 12px;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column; 
+}
+
+ion-button {
+  border-radius: 12px; 
+  transition: background-color 0.3s ease, transform 0.3s ease; 
+}
+
+ion-button:hover {
+  transform: translateY(-2px); 
+  background-color: rgba(0, 0, 0, 0.1); 
+}
+
+ion-badge {
+  margin: 0 10px 10px 0; 
+}
+.gradient-separator {
+  height: 3px;
+  margin-top: 1px;
+  background: linear-gradient(270deg, blue, red);
+  background-size: 400% 400%;
+  animation: gradientAnimation 5s ease infinite;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

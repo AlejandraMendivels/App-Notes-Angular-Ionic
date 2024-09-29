@@ -1,0 +1,30 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-title>Agregar Nota</ion-title>
+      <ion-buttons slot="end">
+        <ion-button (click)="cancelar()">Cancelar</ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+    <ion-item>
+      <ion-label>Descripción</ion-label>
+      <ion-input [(ngModel)]="nota.descripcion" placeholder="Descripción de la nota"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label>Nota</ion-label>
+      <ion-input type="number" [(ngModel)]="nota.nota" placeholder="Nota" min="0" max="5"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label>Corte</ion-label>
+      <ion-select [(ngModel)]="nota.corte">
+        <ion-select-option *ngFor="let corte of cortes" [value]="corte.value">{{ corte.label }}</ion-select-option>
+      </ion-select>
+    </ion-item>
+  
+    <ion-button expand="full" (click)="agregar()">Agregar</ion-button>
+  </ion-content>
+  

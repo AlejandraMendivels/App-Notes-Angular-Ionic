@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Lista de Materias</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="gradient-separator"></div>
+  <h2 class="subtitulo">Lista de materias:</h2>
+  <ion-list>
+    <ion-item *ngFor="let materia of materias">
+      <ion-label>
+        <h2>{{ materia.nombre }} ({{ materia.semestre }} semestre)</h2>
+        <p>{{ materia.codigo }} - Horario: {{ materia.horario }}</p>
+        <p>Observaciones: {{ materia.observaciones }}</p>
+      </ion-label>
+
+      <ion-badge color="{{ pasaMateria(materia) ? 'success' : 'danger' }}">
+        {{ pasaMateria(materia) ? 'Pasa' : 'Pierde' }}
+      </ion-badge>
+
+      <!-- Botones en formato vertical -->
+      <div class="button-container">
+        <ion-button class="pasa-button" color="primary" (click)="presentNotaForm(materia)">Agregar Nota</ion-button>
+        <ion-button color="danger" (click)="confirmDeleteMateria(materia)">Eliminar</ion-button>
+        
+        <!-- Botón para desplegar o colapsar las notas -->
+        <ion-button fill="clear" (click)="materia.showNotas = !materia.showNotas">
+          {{ materia.showNotas ? 'Ocultar Notas' : 'Mostrar Notas' }}
+        </ion-button>
+      </div>
+
+      <!-- Mostrar notas si existen y está desplegado -->
+      <ion-list *ngIf="materia.showNotas">
+        <ion-item *ngFor="let nota of materia.notas; let i = index">
+          <ion-label>
+            <h3>{{ nota.descripcion }} - Corte: {{ nota.corte }}</h3>
+            <p>Nota: {{ nota.nota }}</p>
+          </ion-label>
+          <ion-button color="danger" (click)="eliminarNota(materia, i)">Eliminar Nota</ion-button>
+        </ion-item>
+      </ion-list>
+    </ion-item>
+  </ion-list>
+</ion-content>
